@@ -1,0 +1,49 @@
+version: "3.9"
+
+services:
+  db:
+    build:
+      context: ./mariadb
+    volumes:
+      - library-db:/var/lib/mysql/data
+    restart: always
+    environment:
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: yes
+      MARIADB_DATABASE: biblioteka
+    networks:
+      - library-net 
+    container_name: library-db
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+    networks:
+      - library-net 
+    container_name: library-phpmyadmin
+
+  web:
+    build:
+      context: ./php-apache
+      args:
+        - UID=${UID:-1000}
+        - GID=${GID:-1000}
+    ports:
+      - 8000:80
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - library-net 
+    container_name: library-web
+
+volumes:
+  library-db:
+
+networks:
+  library-net:
+    driver: bridge

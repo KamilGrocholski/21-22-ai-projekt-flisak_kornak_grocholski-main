@@ -1,0 +1,95 @@
+.invisible {
+    display: none !important;
+}
+
+.my-table {
+    max-height: 450px;
+    overflow-y: scroll;
+    table-layout: fixed;
+    font-size: 12px;
+}
+
+.my-table td {
+    white-space: nowrap;
+    max-width: 150px;
+    max-height: 50px;
+    overflow: clip;
+}
+
+table {
+    position: relative;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 !important;
+}
+
+.button-fill {
+    width: 100%;
+    border-radius: 0;
+}
+
+.scrollable-x {
+    overflow-x: scroll;
+}
+
+.my-hero {
+    height: 100vh;
+}
+
+.filters-container {
+        display: flex;
+        align-items: center;
+        width: calc(100vw - 30%);
+        position: absolute;
+        bottom: 0;
+}
+.filter-btn {
+    margin-left: 50px;
+}
+
+.flex-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 30px;
+}
+
+.message-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.my-message {
+    max-width: 500px;
+}
+
+.my-notification {
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.syntax-area {
+    padding: 1em 0.5em;
+}
+
+#textarea-wrapper {
+    width: 80%;
+}

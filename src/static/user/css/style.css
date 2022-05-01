@@ -1,0 +1,11 @@
+body {
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: 2rem;
+}
+
+input-small {
+    width: 200px !important;
+}
