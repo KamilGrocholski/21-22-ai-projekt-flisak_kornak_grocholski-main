@@ -18,6 +18,10 @@
             include('../user/include/profil.php');
         }
 
+        function shelf() {
+            include('../user/include/shelf.php');
+        }
+
         switch ($scr)
         {
             case "main":

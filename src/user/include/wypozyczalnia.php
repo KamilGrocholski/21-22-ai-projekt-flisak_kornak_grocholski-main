@@ -89,7 +89,7 @@
                             while($row = mysqli_fetch_array($result)) {
                                     // list($imie, $nazwisko, $tytul, $rok_wydania, $wydawnictwo, $ilosc, $okladka, $opis) = mysqli_fetch_array($result); 
                                     echo "<div class='column is-4-tablet is-3-desktop' >
-                                            <div class='card' onClick='dodaj(this.id)' id=".$row['id_ksiazka'].">
+                                            <div class='card'  onClick='dodaj(this.id)' id=".$row['id_ksiazka'].">
                                                 <div class='card-image has-text-centered px-6'>
                                                     <img src=".$row['okladka']." alt='okładka'>
                                                 </div>
