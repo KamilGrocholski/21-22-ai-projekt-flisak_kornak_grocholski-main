@@ -82,12 +82,14 @@
                         // $query = "SELECT id_ksiazka, tytul, rok_wydania, wydawnictwo, ilosc, okladka, opis FROM ksiazki ORDER BY tytul";
                         $result = mysqli_query($conn, $query); 
                         $row = mysqli_num_rows($result); 
+
                         $space = " ";
+
                         if(!empty($result)) {
                             while($row = mysqli_fetch_array($result)) {
                                     // list($imie, $nazwisko, $tytul, $rok_wydania, $wydawnictwo, $ilosc, $okladka, $opis) = mysqli_fetch_array($result); 
                                     echo "<div class='column is-4-tablet is-3-desktop' >
-                                            <div class='card' id=".$row['id_ksiazka'].">
+                                            <div class='card' onClick='dodaj(this.id)' id=".$row['id_ksiazka'].">
                                                 <div class='card-image has-text-centered px-6'>
                                                     <img src=".$row['okladka']." alt='okładka'>
                                                 </div>
@@ -106,7 +108,6 @@
                             echo
                             "<div class='brak'>Brak pozycji o podanych danych</div>";
                         }
-                        
     ?>
     </div>
 </div>

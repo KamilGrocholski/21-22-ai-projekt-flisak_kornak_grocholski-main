@@ -31,9 +31,12 @@
                 break;
             case "profil":
                 profil();
-                break;    
+                break; 
+            case "shelf";
+                shelf();
+                break;
             default:
-                main(); //it will show the register form if no option was selected
+                main(); 
         }
     
     ?>
