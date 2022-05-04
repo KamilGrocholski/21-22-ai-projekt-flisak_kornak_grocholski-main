@@ -48,12 +48,12 @@
             <div class="navbar-item">
                 <a href="index.php?scr=profil">
                     <figure class="image is-32x32">
-                        <img src="" alt="Jakiś ludzki obrazek">
+                        <img src="" alt="KOLEKCJA">
                     </figure>
                 </a>
                 <a href="index.php?scr=shelf">
                     <figure class="image is-32x32">
-                        <img src="" alt="Jakiś ludzki obrazek">
+                        <img src="" alt="PROFIL">
                     </figure>
                 </a>
                 <a href='index.php?scr=wylogowanie' class="button is-dark">

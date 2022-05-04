@@ -14,21 +14,28 @@
         <script src="./js/shelf-functions.js"></script>
         <script src="./js/bulma.js"></script>
         <script src="./js/jquery-3.6.0.js"></script>
+        <script src="./js/jq-functions.js"></script>
+
     </head>
-<body>
-    
-<?php include('../user/include/header.php');?>
+    <body>
+        
+            <?php include('../user/include/header.php');?>
 
-<div class="container mb-3 mt-3">
-    <?php include('../user/include/functions/changeInclude.php');?>
-</div>
+<!-- <div class="container mb-3 mt-3"> -->
+            <div class="container" id="mainDiv">
+                <?php include('../user/include/functions/changeInclude.php');?>
+            </div>
 
-<?php include('../user/include/footer.php');?>
+            <div class="stack" id='jqmw'>
 
-</body>
-</html>
-<script>
-if ( window.history.replaceState ) {
-        window.history.replaceState( null, null, window.location.href );
-    }
-</script>
+            </div>
+
+            <?php include('../user/include/footer.php');?>
+        
+    </body>
+    </html>
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>

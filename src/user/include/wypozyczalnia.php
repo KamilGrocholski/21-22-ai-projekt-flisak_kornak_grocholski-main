@@ -2,9 +2,9 @@
     include('connection.php');
 ?>
 
-<form action="" method="POST">
+<form action="" method="POST" id="filter">
 
-<div class="container mb-4">
+<div class="container mb-4" id="form-filter">
 <section class="mb-2">
     <div class="select is-small is-rounded">
         <select name="w">
@@ -40,12 +40,12 @@
         </select>
     </div>
 </section> 
+<input class="button mb-2 has-text-centered" style="width: 10%;" type="submit" name="submit" value="Filtruj"/>
+<input class="button mb-3 has-text-centered" style="width: 10%;" type="reset" name="reset" value="Resetuj" onclick='window.location.reload(true);'/>
 </div>
-<input class="input mb-2 has-text-centered" style="width: 10%;" type="submit" name="submit"/>
-<input class="input mb-3 has-text-centered" style="width: 10%;" type="reset" name="reset onClick='window.location.reload(true);" onClick="history.go(0);"/>
                     </form>
 
-<div class="container">
+<div class="container" id="wyswietlanieDiv">
     <div class="columns is-multiline has-text-centered">
     <?php
 
@@ -88,10 +88,10 @@
                         if(!empty($result)) {
                             while($row = mysqli_fetch_array($result)) {
                                     // list($imie, $nazwisko, $tytul, $rok_wydania, $wydawnictwo, $ilosc, $okladka, $opis) = mysqli_fetch_array($result); 
-                                    echo "<div class='column is-4-tablet is-3-desktop' >
+                                    echo "<div class='column is-3-tablet is-3-desktop is-mobile is-vcentered' >
                                             <div class='card'  onClick='dodaj(this.id)' id=".$row['id_ksiazka'].">
                                                 <div class='card-image has-text-centered px-6'>
-                                                    <img src=".$row['okladka']." alt='okładka'>
+                                                    <img loading='lazy' src=".$row['okladka']." alt='okładka'>
                                                 </div>
                                                 <div class='card-content'>
                                                     <p class='title is-size-5'>".$row['tytul']."</p>
@@ -105,8 +105,7 @@
                                         </div>";
                             }
                         }else {
-                            echo
-                            "<div class='brak'>Brak pozycji o podanych danych</div>";
+                            echo "<div class='column is-3-tablet is-3-desktop is-mobile is-vcentered' >Brak pozycji o podanych danych</div>";
                         }
     ?>
     </div>
